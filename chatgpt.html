@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<body>
+
+
+	<h2>Chat Gpt</h2>
+
+	<p>Enter Query:</p>
+
+	<input id="id1" type="text" required>
+	<button onclick="myFunction()">SEND</button>
+	<p>Message will be displayed here.</p>
+	<p id="data"></p> <p id="data1"></p>
+	<div id="placehere"></div>
+	
+
+	<br>
+	<div id="content">
+		<h1 id="header1"></h1>
+		<p id="demo" style="color: rgb(255, 255, 255);"></p>
+	</div>
+
+
+	<script>
+
+		async function myFunction() {
+			const inpObj = document.getElementById("id1").value;
+			if (inpObj == null || inpObj == '') {
+				alert("Please Enter Data!")
+				return false;
+			}
+
+			var elem = document.createElement("img");
+			elem.setAttribute("src", "loading.gif");
+			elem.setAttribute("height", "50");
+			elem.setAttribute("width", "50");
+			elem.setAttribute("alt", "Flower");
+
+
+			document.getElementById("placehere").appendChild(elem);
+			elem.src = "loading.gif";
+
+			document.getElementById("data").innerHTML = "Searching for: " + inpObj;
+			document.getElementById("data1").innerHTML = "Loading…";
+			
+			document.getElementById("content").style.backgroundColor = "white";
+			document.getElementById("content").style.padding = "20px";
+			document.getElementById("demo").innerHTML = "";
+			document.getElementById("header1").innerHTML = "";
+
+			var myVar = { "prompt": inpObj };
+			const header = new Headers();
+			header.append('Access-Control-Allow-Origin', 'http://localhost:9091/chat');
+			header.append('Access-Control-Allow-Credentials', 'true');
+			header.append("Access-Control-Allow-Methods", "DELETE, POST, GET, OPTIONS");
+			header.append('Content-type', 'application/json');
+			header.append('Accept', 'application/json');
+
+			try {
+				const response = await fetch("http://localhost:9091/chat", {
+					mode: 'cors',
+					method: "POST",
+					headers: header,
+					body: JSON.stringify(myVar)
+
+				})
+
+				const result = await response.json();
+				document.getElementById("placehere").removeChild(elem);
+				document.getElementById("data1").innerHTML = "Generating answers for you…";
+				console.log("Success:", JSON.stringify(result.choices[0].message.content));
+				document.getElementById("content").style.backgroundColor = "black";
+				document.getElementById("content").style.padding = "20px";
+				document.getElementById("header1").innerHTML = "Jv:";
+				document.getElementById("header1").style.color = "yellow";
+				var i = 0;
+				var txt = result.choices[0].message.content;
+				// const timer = ms => new Promise(res => setTimeout(res, ms))
+
+				// while (i < txt.length) {
+				// 	document.getElementById("demo").innerHTML += txt.charAt(i);
+				// 	i++;
+				// 	await timer(20);
+				// }
+				document.getElementById("demo").innerHTML += txt;
+			}
+			catch (err) {
+				document.getElementById("header1").innerHTML = "Server is Down!!!";
+				document.getElementById("header1").style.color = "red";
+			}
+
+
+
+		}
+
+	</script>
+</body>
+
+</html>

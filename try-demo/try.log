@@ -1,0 +1,20 @@
+2023-09-25 15:59:45.388  INFO 5292 --- [main] com.example.demo.TryDemoApplication      : Starting TryDemoApplication using Java 1.8.0_352 on LAPTOP-M57LMG1S with PID 5292 (D:\try-demo\target\classes started by jvcat in D:\try-demo)
+2023-09-25 15:59:45.394  INFO 5292 --- [main] com.example.demo.TryDemoApplication      : No active profile set, falling back to 1 default profile: "default"
+2023-09-25 15:59:46.331  INFO 5292 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-09-25 15:59:46.334  INFO 5292 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-09-25 15:59:46.358  INFO 5292 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 JDBC repository interfaces.
+2023-09-25 15:59:46.386  INFO 5292 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-09-25 15:59:46.389  INFO 5292 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-25 15:59:46.401  INFO 5292 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 0 JPA repository interfaces.
+2023-09-25 15:59:47.221  INFO 5292 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-09-25 15:59:48.303  INFO 5292 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-09-25 15:59:48.398  INFO 5292 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-25 15:59:48.601  INFO 5292 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-09-25 15:59:49.066  INFO 5292 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-09-25 15:59:49.307  INFO 5292 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-09-25 15:59:49.692  INFO 5292 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-25 15:59:49.711  INFO 5292 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-25 15:59:50.088  INFO 5292 --- [main] com.example.demo.TryDemoApplication      : Started TryDemoApplication in 5.539 seconds (JVM running for 6.287)
+2023-09-25 15:59:50.103  INFO 5292 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-09-25 15:59:50.110  INFO 5292 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-09-25 15:59:50.136  INFO 5292 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
